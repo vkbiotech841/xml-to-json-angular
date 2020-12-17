@@ -1,5 +1,17 @@
-<div>
-    <pre>{{this.jsonObj.catalog | json}}</pre>
+<div class="container">
+
+    <div class="col-md-3">
+        <input class="form-control" type="file" accept=".xml" (change)="selectExcelFile($event)">
+    </div>
+
+    <div class="col-md-2">
+        <button class="btn btn-primary" (click)="excelToJsonConverter()">Convert</button>
+    </div>
+
+    <div *ngIf="jsonObj">
+        <pre>{{jsonObj.catalog | json}}</pre>
+    </div>
 </div>
+
 
 <router-outlet></router-outlet>
